@@ -1,0 +1,13 @@
+<h1><%= @post.title %></h1>
+
+<%= @post.body %>
+
+
+<% if @post.published? %>
+<p><%= time_tag(@post.published_at) %></p>
+<% end %>
+
+<% if author_signed_in? %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
+  <%= link_to 'Back', posts_path %>

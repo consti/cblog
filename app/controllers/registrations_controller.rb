@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 class RegistrationsController < Devise::RegistrationsController
-  before_action :one_admin_registered?, only: %i(new create)
+  before_action :one_author_registered?, only: %i(new create)
 
   protected
 
-  def one_admin_registered?
-    if Admin.count == 1 && admin_signed_in?
+  def one_author_registered?
+    if Author.count == 1 && author_signed_in?
       redirect_to root_path
-    elsif Admin.count == 1
-      redirect_to new_admin_session_path
+    elsif Author.count == 1
+      redirect_to new_author_session_path
     end
   end
 end
