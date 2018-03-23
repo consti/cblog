@@ -12,3 +12,10 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require highlight.pack
+
+document.addEventListener("turbolinks:load", function() {
+   document.querySelectorAll('pre').forEach(function(e) {
+      hljs.highlightBlock(e)
+   })
+})
