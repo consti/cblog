@@ -1,4 +1,7 @@
 # frozen_string_literal: true
+
+require 'trix/simple_form/trix_editor_input.rb'
+
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
   # Wrappers are used by the form builder to generate a
@@ -138,7 +141,7 @@ SimpleForm.setup do |config|
 
   # Namespaces where SimpleForm should look for custom input classes that
   # override default inputs.
-  # config.custom_inputs_namespaces << "CustomInputs"
+  config.custom_inputs_namespaces << 'Trix::SimpleForm'
 
   # Default priority for time_zone inputs.
   # config.time_zone_priority = nil

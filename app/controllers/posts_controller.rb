@@ -2,6 +2,7 @@
 
 class PostsController < ApplicationController
   before_action :authenticate_author!, only: %i(new create edit update)
+  layout 'editor', only: %i(new create edit update)
 
   # GET /posts
   def index

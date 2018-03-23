@@ -1,7 +1,6 @@
 <h1><%= @post.title %></h1>
 
-<%= @post.body %>
-
+<%= @post.body&.html_safe %>
 
 <% if @post.published? %>
 <p><%= time_tag(@post.published_at) %></p>
