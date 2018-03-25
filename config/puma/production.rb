@@ -2,12 +2,12 @@ directory "#{ENV['APP_DIR']}/current"
 # rackup "#{ENV['APP_DIR']}/current/config.ru"
 environment ENV.fetch("RAILS_ENV") { "production" }
 
-# pidfile "#{ENV['APP_DIR']}/shared/tmp/pids/puma.pid"
-# state_path "#{ENV['APP_DIR']}/shared/tmp/pids/puma.state"
-# stdout_redirect "#{ENV['APP_DIR']}/shared/log/puma_access.log", "#{ENV['APP_DIR']}/shared/log/puma_error.log", true
+pidfile "#{ENV['APP_DIR']}/shared/tmp/pids/puma.pid"
+state_path "#{ENV['APP_DIR']}/shared/tmp/pids/puma.state"
+stdout_redirect "#{ENV['APP_DIR']}/shared/log/puma_access.log", "#{ENV['APP_DIR']}/shared/log/puma_error.log", true
 #
-# bind "unix://#{ENV['APP_DIR']}/shared/tmp/sockets/puma.sock"
-port        ENV.fetch("PORT") { 3000 }
+bind "unix://#{ENV['APP_DIR']}/shared/tmp/sockets/puma.sock"
+# port        ENV.fetch("PORT") { 3000 }
 
 # Puma can serve each request in a thread from an internal thread pool.
 # The `threads` method setting takes two numbers: a minimum and maximum.
@@ -41,3 +41,4 @@ prune_bundler
 # plugin :tmp_restart
 
 early_hints true
+# persistent_timeout 10
