@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: cblog_production
-  username: cblog
-  password: <%= ENV['CBLOG_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
