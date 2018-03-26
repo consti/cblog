@@ -9,7 +9,20 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class='flex'>
+    <header></header>
+    <div class="flex-body">
+      <main class="flex-content">
+        <%= yield %>
+      </main>
+      <nav class="flex-nav">
+      </nav>
+      <% if content_for?(:aside) %>
+        <aside class="flex-aside">
+          <%= yield(:aside) %>
+        </aside>
+      <% end %>
+    </div>
+    <footer></footer>
   </body>
 </html>

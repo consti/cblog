@@ -1,0 +1,50 @@
+@import "colors";
+@import "scaffolds";
+@import "highlightjs-styles/github";
+
+.flex,
+.flex-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-nav {
+  order: -1;
+  background-color: #ffe066;
+  padding: 1.5em;
+}
+
+.flex-content {
+  padding: 1.5em;
+}
+
+@media (min-width: 768px) {
+  .flex-body {
+    flex-direction: row;
+    flex: 1;
+  }
+  .flex-content {
+    flex: 1;
+  }
+  .flex-nav {
+    flex: 0 0 8em;
+  }
+
+  .flex-aside {
+    flex: 0 0 12em;
+  }
+}
+
+
+nav img.icon {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  nav img.icon {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    display: block;
+  }
+}
